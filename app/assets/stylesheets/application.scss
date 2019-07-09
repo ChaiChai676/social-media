@@ -1,0 +1,10 @@
+// Components
+  @import 'components/navbar';
+
+// Pages
+  @import 'pages/home';
+
+.below-nav {
+  top: 8vh;
+  position: absolute;
+}

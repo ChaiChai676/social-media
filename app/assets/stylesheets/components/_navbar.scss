@@ -1,0 +1,44 @@
+.navbar {
+  background-color: blue;
+  height: 8vh;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.brand-img {
+  height: 5vh;
+  width: 5vh;
+  left: 0px;
+  top: 1vh;
+  position: fixed;
+}
+
+.login {
+  right: 0px;
+  top: 4vh;
+  position: absolute;
+}
+
+.nav-button {
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 5px;
+
+}
+
+ul {
+  list-style-type: none;
+  background-color: blue;
+}
+
+li {
+  text-align: center;
+  float: right;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 5vh;
+}
