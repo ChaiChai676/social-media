@@ -1,3 +1,5 @@
 <div class="home-content">
-  <%= User.all.inspect %>
+  <% User.all.each do |user| %>
+    <%=  user.email %>
+  <% end %>
 </div>

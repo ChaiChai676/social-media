@@ -1,4 +1,4 @@
-.navbar {
+.nav-bar {
   background-color: blue;
   height: 8vh;
   position: fixed;
@@ -9,9 +9,9 @@
 .brand-img {
   height: 5vh;
   width: 5vh;
-  left: 0px;
+  left: 1vh;
   top: 1vh;
-  position: fixed;
+  position: absolute;
 }
 
 .login {
@@ -22,10 +22,24 @@
 
 .nav-button {
   text-decoration: none;
+  color: white;
   border: 1px solid black;
-  border-radius: 15px;
+  border-radius: 3px;
   padding: 5px;
+  margin: 1px;
+  display: inline-block;
+}
 
+.nav-button:hover {
+  text-decoration: none;
+  background-color: white;
+  color: white;
+  transition: 0.5s;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 ul {

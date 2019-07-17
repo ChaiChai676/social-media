@@ -7,4 +7,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :surname, presence: true
   validates :email, presence: true
+
+  def gravatar_url
+    gravatar_id = Digest::MD5::hexdigest(email).downcase
+    "https://gravatar.com/avatar/#{gravatar_id}.png"
+  end
 end

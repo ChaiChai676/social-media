@@ -1,10 +1,15 @@
+@import "bootstrap";
+
 // Components
   @import 'components/navbar';
 
 // Pages
   @import 'pages/home';
+  @import 'pages/rooms/index';
+  @import 'pages/rooms/show';
 
 .below-nav {
   top: 8vh;
   position: absolute;
 }
+
