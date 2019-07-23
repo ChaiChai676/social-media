@@ -7,4 +7,18 @@
   }
 }
 
+.home-container {
+  display: grid;
+  grid-template-areas: "room user";
+  margin-top: 50px;
+  .all-rooms {
+      grid-area: room;
+  }
+  .all-users {
+      grid-area: user;
+  }
+}
 
+.index-container {
+  margin-top: 50px;
+}
