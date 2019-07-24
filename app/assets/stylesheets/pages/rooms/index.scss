@@ -7,4 +7,24 @@
   }
 }
 
+.home-container {
+  display: grid;
+  grid-template-areas: "room user";
+  margin-top: 50px;
+  justify-content: space-between;
+  .all-rooms {
+      grid-area: room;
+      width: 25vw;
+  }
+  .all-users {
+      grid-area: user;
+      width: 25vw;
+      h2 {
+        background-color: rgb(221, 221, 221);
+      }
+  }
+}
 
+.index-container {
+  margin-top: 50px;
+}
