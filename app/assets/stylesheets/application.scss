@@ -7,6 +7,9 @@
   @import 'pages/home';
   @import 'pages/rooms/index';
   @import 'pages/rooms/show';
+  @import 'pages/login';
+  @import 'pages/signup';
+  @import 'pages/forgot_password';
 
 .below-nav {
   top: 50px;
@@ -14,3 +17,7 @@
   width: 100vw;
 }
 
+.col-12 {
+  display: grid;
+  justify-content: center;
+}

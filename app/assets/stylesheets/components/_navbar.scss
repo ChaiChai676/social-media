@@ -7,13 +7,14 @@
   display: grid;
   align-content: center;
   align-items: center;
+  text-align: end;
+  z-index: 1;
 }
 
 .brand-img {
-  height: 5vh;
-  width: 5vh;
-  left: 1vh;
-  top: 1vh;
+  width: 36px;
+  left: 1vw;
+  top: 10px;
   position: absolute;
 }
 
@@ -26,7 +27,7 @@
 .nav-button {
   text-decoration: none;
   color: white;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 3px;
   padding: 5px;
   margin: 1px;
@@ -35,25 +36,27 @@
 
 .nav-button:hover {
   text-decoration: none;
-  background-color: white;
+  background-color: rgb(95, 135, 194);
   color: white;
   transition: 0.5s;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  // text-shadow:
+  //   -1px -1px 0 #000,
+  //   1px -1px 0 #000,
+  //   -1px 1px 0 #000,
+  //   1px 1px 0 #000;
 }
 
 ul {
   list-style-type: none;
-  margin-bottom: 0;
-  // display: grid;
+  margin: 0 1vw 0 0;
+  overflow: hidden;
 }
 
 li {
-  text-align: center;
-  float: right;
+  display: inline-block;
+  // text-align: center;
+  // float: left;
+  right: 1vw;
 }
 
 .avatar {
