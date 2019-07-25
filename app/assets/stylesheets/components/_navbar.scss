@@ -12,7 +12,7 @@
 }
 
 .brand-img {
-  width: 2vw;
+  width: 36px;
   left: 1vw;
   top: 10px;
   position: absolute;
@@ -27,7 +27,7 @@
 .nav-button {
   text-decoration: none;
   color: white;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 3px;
   padding: 5px;
   margin: 1px;
@@ -36,14 +36,14 @@
 
 .nav-button:hover {
   text-decoration: none;
-  background-color: white;
+  background-color: rgb(95, 135, 194);
   color: white;
   transition: 0.5s;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  // text-shadow:
+  //   -1px -1px 0 #000,
+  //   1px -1px 0 #000,
+  //   -1px 1px 0 #000,
+  //   1px 1px 0 #000;
 }
 
 ul {
