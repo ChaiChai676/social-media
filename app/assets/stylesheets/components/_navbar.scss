@@ -7,6 +7,7 @@
   display: grid;
   align-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 .brand-img {
@@ -47,13 +48,15 @@
 
 ul {
   list-style-type: none;
-  margin-bottom: 0;
-  // display: grid;
+  margin: 0;
+  overflow: hidden;
+
 }
 
 li {
-  text-align: center;
-  float: right;
+  display: inline-block;
+  // text-align: center;
+  // float: left;
 }
 
 .avatar {
