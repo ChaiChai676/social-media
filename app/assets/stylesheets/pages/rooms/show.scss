@@ -4,6 +4,8 @@
   height: 50vh;
   border-radius: 5px 5px 0 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  width: 700px;
 }
 
 .chat-input {
@@ -29,4 +31,11 @@
   & + .chat-message-container {
     margin-top: 10px;
   }
+}
+
+.show-rooms-container {
+  display: grid;
+  justify-content: center;
+  width: 1000px;
+  margin-top: 100px;
 }
