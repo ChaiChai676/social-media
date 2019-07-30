@@ -1,5 +1,6 @@
+@import 'config';
 .nav-bar {
-  background-color: rgb(124, 176, 255);
+  background-color: $primary-colour;
   height: 8vh;
   position: fixed;
   top: 0px;
@@ -36,7 +37,7 @@
 
 .nav-button:hover {
   text-decoration: none;
-  background-color: rgb(95, 135, 194);
+  background-color: $dark-colour;
   color: white;
   transition: 0.5s;
   // text-shadow:
