@@ -3,11 +3,10 @@ Rails.application.routes.draw do
 
   resources :users
 
-  # root to: 'pages#home'
-  root controller: :rooms, action: :index
-
   resources :room_messages
   resources :rooms
+
+  root 'rooms#index'
 
   mount ActionCable.server, at: '/cable'
 

@@ -1,15 +1,18 @@
 class RoomsController < ApplicationController
+
   def index
-    @rooms = Room.all
+    @rooms = policy_scope(Room)
   end
 
   def new
     @room = Room.new
+    authorize @room
   end
 
   def create
     @room = Room.new(permitted_parameters)
-
+    @room.user_id = current_user.id
+    authorize @room
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
       redirect_to rooms_path
@@ -20,6 +23,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    authorize @room
+
     @room_message = RoomMessage.new room: @room
     @room_messages = @room.room_messages.includes(:user)
   end

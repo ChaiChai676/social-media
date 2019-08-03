@@ -1,4 +1,4 @@
-<div class="index-container"> 
+<div class="index-container">
   <div class="col" style="padding: 0">
     <div class="alert alert-primary">
       <h4 class="alert-heading">
@@ -17,6 +17,12 @@
     </div>
   </div>
 
+<div class="mb-3">
+  <%= link_to new_room_path, class: 'btn btn-primary' do %>
+    Create a room
+  <% end %>
+</div>
+
   <div class="home-container">
     <div class="all-rooms">
       <div class="">
@@ -25,12 +31,19 @@
     </div>
 
     <div class="all-users">
-      <h2>Users</h2>
+      <h2>Chat</h2>
         <% User.all.each do |user| %>
           <br>
             <%= user.email %>
           </br>
         <% end %>
+    </div>
+
+    <div>
+      <h2>Profiles</h2>
+      <% User.all.each do |user| %>
+        <%= link_to user.first_name, user_path(user.id), class: 'nav-link room-nav-link' %>
+      <% end %>
     </div>
   </div>
 </div>
