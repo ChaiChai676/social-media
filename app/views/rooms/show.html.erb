@@ -1,7 +1,7 @@
 <div class="show-rooms-container">
   <div class="inner-show-rooms">
     <h1>
-      <%= @room.name %>
+      <%= @room.users.pluck(:first_name).join(" ").gsub(current_user.first_name, "") %>
     </h1>
 
     <div class="row">

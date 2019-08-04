@@ -1,4 +1,4 @@
-<div class="index-container"> 
+<div class="index-container">
   <div class="col" style="padding: 0">
     <div class="alert alert-primary">
       <h4 class="alert-heading">
@@ -6,31 +6,45 @@
       </h4>
 
       <p>
-        Select a user to talk to.
+
       </p>
 
       <hr />
 
       <p>
-        You can create or join a room from the sidebar.
+
       </p>
     </div>
   </div>
 
+<div class="mb-3">
+  <%= link_to new_room_path, class: 'btn btn-primary' do %>
+    Chat with someone!
+  <% end %>
+</div>
+
   <div class="home-container">
     <div class="all-rooms">
       <div class="">
+        <h2>Recent chats</h2>
         <%= render partial: 'rooms' %>
       </div>
     </div>
 
     <div class="all-users">
-      <h2>Users</h2>
+      <h2>Emails</h2>
         <% User.all.each do |user| %>
           <br>
             <%= user.email %>
           </br>
         <% end %>
+    </div>
+
+    <div>
+      <h2>Profiles</h2>
+      <% User.all.each do |user| %>
+        <%= link_to user.first_name, user_path(user.id), class: 'nav-link room-nav-link' %>
+      <% end %>
     </div>
   </div>
 </div>

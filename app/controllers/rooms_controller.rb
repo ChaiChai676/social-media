@@ -1,18 +1,21 @@
 class RoomsController < ApplicationController
+
   def index
-    @rooms = Room.all
+    @rooms = policy_scope(Room)
   end
 
   def new
     @room = Room.new
+    authorize @room
   end
 
   def create
     @room = Room.new(permitted_parameters)
-
+    authorize @room
+    @room.users << User.find(current_user.id)
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render :new
     end
@@ -20,6 +23,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    authorize @room
+
     @room_message = RoomMessage.new room: @room
     @room_messages = @room.room_messages.includes(:user)
   end
@@ -44,6 +49,6 @@ class RoomsController < ApplicationController
   end
 
   def permitted_parameters
-    params.require(:room).permit(:name)
+    params.require(:room).permit(:name, :user_ids)
   end
 end
