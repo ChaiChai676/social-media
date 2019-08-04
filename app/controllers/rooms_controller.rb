@@ -11,11 +11,11 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(permitted_parameters)
-    @room.user_id = current_user.id
     authorize @room
+    @room.users << User.find(current_user.id)
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render :new
     end
@@ -49,6 +49,6 @@ class RoomsController < ApplicationController
   end
 
   def permitted_parameters
-    params.require(:room).permit(:name)
+    params.require(:room).permit(:name, :user_ids)
   end
 end

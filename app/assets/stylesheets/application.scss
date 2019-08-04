@@ -1,4 +1,4 @@
-@import "bootstrap";
+  @import "bootstrap";
 
 // Components
   @import 'components/navbar';
@@ -7,6 +7,7 @@
   @import 'pages/home';
   @import 'pages/rooms/index';
   @import 'pages/rooms/show';
+  @import 'pages/rooms/new';
   @import 'pages/login';
   @import 'pages/signup';
   @import 'pages/forgot_password';

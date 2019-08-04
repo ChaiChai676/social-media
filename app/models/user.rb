@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :surname, presence: true
   validates :email, presence: true
 
-  has_many :rooms
+  has_and_belongs_to_many :rooms
   has_many :room_messages
 
   def gravatar_url

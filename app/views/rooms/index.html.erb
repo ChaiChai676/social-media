@@ -2,36 +2,37 @@
   <div class="col" style="padding: 0">
     <div class="alert alert-primary">
       <h4 class="alert-heading">
-        Welcome to the RailsChatTutorial!
+        Welcome to the ChaiChat!
       </h4>
 
       <p>
-        We need to talk.
+
       </p>
 
       <hr />
 
       <p>
-        You can create or join a room from the sidebar.
+
       </p>
     </div>
   </div>
 
 <div class="mb-3">
   <%= link_to new_room_path, class: 'btn btn-primary' do %>
-    Create a room
+    Chat with someone!
   <% end %>
 </div>
 
   <div class="home-container">
     <div class="all-rooms">
       <div class="">
+        <h2>Recent chats</h2>
         <%= render partial: 'rooms' %>
       </div>
     </div>
 
     <div class="all-users">
-      <h2>Chat</h2>
+      <h2>Emails</h2>
         <% User.all.each do |user| %>
           <br>
             <%= user.email %>

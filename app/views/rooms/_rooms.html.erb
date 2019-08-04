@@ -1,13 +1,9 @@
 <div class="rooms-container">
-  <% if @rooms.present? %>
-    <nav class="nav flex-column">
-      <% @rooms.each do |room| %>
-        <%= link_to room.name, room_path(room), class: 'nav-link room-nav-link' %>
+  <nav class="nav flex-column">
+    <% @rooms.each do |room| %>
+      <% if user_signed_in? && room.user_ids.include?(current_user.id) %>
+        <%= link_to room.users.pluck(:first_name).join(" ").gsub(current_user.first_name, ""), room_path(room), class: 'nav-link room-nav-link' %>
       <% end %>
-    </nav>
-  <% else %>
-    <div class="text-muted">
-      The are no rooms
-    </div>
-  <% end %>
+    <% end %>
+  </nav>
 </div>
