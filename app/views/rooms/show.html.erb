@@ -11,7 +11,9 @@
             <div class="chat-message-container" data-role="message-template">
               <div class="row no-gutters">
                 <div class="col-auto text-center">
-                  <%= room_message.user.first_name %>
+                  <div data-role="user-first-name">
+                    <%= room_message.user.first_name %>
+                  </div>
                     <img src="<%= room_message.user.gravatar_url %>" class="avatar" alt="" data-role="user-avatar">
                 </div>
 
