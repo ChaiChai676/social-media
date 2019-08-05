@@ -6,7 +6,13 @@
 
     <div class="row">
       <div class="col">
-        <div onscroll="myFunction()" id="myDIV" class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>" >
+
+        <div id="" class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>" >
+
+          <img id="loader" src='http://opengraphicdesign.com/wp-content/uploads/2009/01/loader64.gif'>
+
+<div class='inner'>
+
           <% @room_messages.each do |room_message| %>
             <div class="chat-message-container" data-role="message-template">
               <div class="row no-gutters">
@@ -33,9 +39,9 @@
               </div>
             </div>
           <% end %>
-        </div>
 
-<p id="demo"></p>
+  </div>
+</div>
 
           <%= simple_form_for @room_message, remote: true do |form| %>
             <div class="input-group mb-3">
