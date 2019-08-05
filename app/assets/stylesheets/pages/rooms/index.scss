@@ -10,7 +10,7 @@
 .home-container {
   display: grid;
   grid-template-areas: "room user";
-  margin-top: 50px;
+  margin-top: 0px;
   justify-content: space-between;
   grid-gap: 20px;
   .all-rooms {
@@ -21,9 +21,26 @@
       grid-area: user;
       width: 25vw;
       h2 {
-        background-color: $primary-colour;
+
       }
   }
+}
+
+.chat-button {
+  text-decoration: none;
+  color: white;
+  background-color: #6699ff;
+  border-radius: 3px;
+  padding: 8px;
+  margin: 1px;
+  display: inline-block;
+}
+
+.chat-button:hover {
+  text-decoration: none;
+  background-color: $dark-colour;
+  color: white;
+  transition: 0.5s;
 }
 
 .index-container {

@@ -1,4 +1,6 @@
 <%= simple_form_for [@user, @room] do |form| %>
+  <div class="hidden">
   <%= form.input :name %>
-  <%= form.submit "Save", class: 'btn btn-success' %>
+  </div>
+  <%= form.submit "Coming soon!", class: 'nav-link room-nav-link fill-width' %>
 <% end %>

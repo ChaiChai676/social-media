@@ -3,7 +3,7 @@
 // Components
   @import 'components/navbar';
   @import 'components/config';
-  
+
 // Pages
   @import 'pages/home';
   @import 'pages/rooms/index';
@@ -14,7 +14,7 @@
   @import 'pages/forgot_password';
 
 .below-nav {
-  top: 50px;
+  top: 8vh;
   position: absolute;
   width: 100vw;
 }

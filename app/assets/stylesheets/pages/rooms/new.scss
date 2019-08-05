@@ -6,3 +6,20 @@
   width: 100%;
   text-align: center;
 }
+
+.save-button {
+  text-decoration: none;
+  color: white;
+  background-color: #6699ff;
+  border-radius: 3px;
+  padding: 8px;
+  margin: 1px;
+  display: inline-block;
+}
+
+.save-button:hover {
+  text-decoration: none;
+  background-color: $dark-colour;
+  color: white;
+  transition: 0.5s;
+}
