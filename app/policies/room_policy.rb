@@ -1,28 +1,20 @@
 class RoomPolicy < ApplicationPolicy
+  attr_reader :user, :room
 
-
-  class Scope < Scope
-    attr_reader :user, :scope
-
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      scope.all
-    end
+  def initialize(user, room)
+    @user = user
+    @room = room
   end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def new?
-      true
-    end
+  def new?
+    true
+  end
 
-    def show?
-      true
-    end
+  def show?
+    room.users.ids.include?(user.id)
+  end
 end

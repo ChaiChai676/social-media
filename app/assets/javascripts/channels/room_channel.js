@@ -4,7 +4,7 @@ $(function() {
         room_id = $element.data('room-id')
         messageTemplate = $('[data-role="message-template"]')[0];
 
-    $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000)
+    $element.animate({ scrollTop: $element.prop("scrollHeight")}, 0)
 
     App.cable.subscriptions.create(
       {
@@ -14,13 +14,17 @@ $(function() {
       {
         received: function(data) {
           var content = $(messageTemplate).clone();
+          content.find('[data-role="user-first-name"]').text(data.user);
           content.find('[data-role="user-avatar"]').attr('src', data.user_avatar_url);
           content.find('[data-role="message-text"]').text(data.message);
           content.find('[data-role="message-date"]').text(data.updated_at);
           $element.append(content);
-          $element.animate({ scrollTop: $element.prop("scrollHeight")}, 1000);
+          $element.animate({ scrollTop: $element.prop("scrollHeight")}, 500);
         }
       }
     );
   });
 });
+
+
+
