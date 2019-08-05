@@ -37,15 +37,6 @@
         <%= link_to user.first_name, user_path(user.id), class: 'nav-link room-nav-link' %>
       <% end %>
     </div>
-
-    <div>
-      <h2>Emails</h2>
-        <% User.all.each do |user| %>
-          <br>
-            <%= user.email %>
-          </br>
-        <% end %>
-    </div>
   </div>
 </div>
 
