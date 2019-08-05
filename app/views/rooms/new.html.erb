@@ -1,5 +1,5 @@
 <h1>
-  Create a room
+  Create a Group
 </h1>
 
 <%= render partial: 'form' %>
@@ -15,7 +15,7 @@
       <%= form.input :name, input_html: {value: user.first_name}%>
       <%= form.input :user_ids, input_html: {value: user.id }%>
     </div>
-      <%= form.submit user.first_name, class: 'nav-link room-nav-link' %>
+      <%= form.submit user.first_name, class: 'nav-link room-nav-link fill-width' %>
          <% end %>
     <% end %>
   <% end %>
