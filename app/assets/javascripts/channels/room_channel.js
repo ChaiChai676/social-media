@@ -14,7 +14,7 @@ $(function() {
       {
         received: function(data) {
           var content = $(messageTemplate).clone();
-          content.find('[data-role="user-first-name"]').text(data.user);
+          content.find('[data-role="user-first-name"]').text(data.user_first_name);
           content.find('[data-role="user-avatar"]').attr('src', data.user_avatar_url);
           content.find('[data-role="message-text"]').text(data.message);
           content.find('[data-role="message-date"]').text(data.updated_at);
