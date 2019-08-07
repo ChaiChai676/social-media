@@ -6,59 +6,48 @@
 
     <div class="row">
       <div class="col">
-
         <div id="" class="chat" data-channel-subscribe="room" data-room-id="<%= @room.id %>" >
-
           <img class="hidden" id="loader" src='http://opengraphicdesign.com/wp-content/uploads/2009/01/loader64.gif'>
-
-        <div class='inner'>
-
-        <% @room_messages.each_with_index do |room_message, index| %>
-
-
-            <div class="chat-message-container" data-role="message-template">
-              <div class="row no-gutters">
-                <div class="col-auto text-center">
-                  <div data-role="user-first-name">
-                      <%= room_message.user.first_name %>
-                  </div>
-                    <img src="<%= room_message.user.gravatar_url %>" class="avatar" alt="" data-role="user-avatar">
-                </div>
-
-                <div class="col">
-                  <div class="message-content">
-                    <p class="mb-1" data-role="message-text">
-                      <%= room_message.message %>
-                    </p>
-
-                    <div class="text-right" data-role="message-date">
-                      <small>
-                        <%= room_message.created_at %>
-                      </small>
+            <div class='inner'>
+              <% @room_messages.each_with_index do |room_message, index| %>
+                <div class="chat-message-container" data-role="message-template">
+                  <div class="row no-gutters">
+                    <div class="col-auto text-center">
+                      <div data-role="user-first-name">
+                        <%= room_message.user.first_name %>
+                      </div>
+                        <img src="<%= room_message.user.gravatar_url %>" class="avatar" alt="" data-role="user-avatar">
                     </div>
+                        <div class="col">
+                          <div class="message-content">
+                            <p class="mb-1" data-role="message-text">
+                              <%= room_message.message %>
+                            </p>
+                              <div class="text-right" data-role="message-date">
+                                <small>
+                                  <%= room_message.created_at %>
+                                </small>
+                              </div>
+                          </div>
+                        </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             </div>
+        </div>
 
-        <% end %>
-      </div>
-    </div>
-
-          <%= simple_form_for @room_message, remote: true do |form| %>
-            <div class="input-group mb-3">
-              <%= form.input :message, as: :string,
-                                      wrapper: false,
+            <%= simple_form_for @room_message, remote: true do |form| %>
+              <div class="input-group mb-3">
+                <%= form.input :message, as: :string,
+                                    wrapper: false,
                                       label: false,
-                                      input_html: {
-                                        class: 'chat-input'
-                                      } %>
-              <div class="input-group-append">
-
-                <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+                                 input_html: {
+                                      class: 'chat-input'
+                                    } %>
+                <div class="input-group-append">
+                  <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
+                </div>
               </div>
-            </div>
-
             <%= form.input :room_id, as: :hidden %>
           <% end %>
         <%= link_to "Back to rooms", rooms_path %>
@@ -66,6 +55,3 @@
     </div>
   </div>
 </div>
-
-<% if (@room.room_messages.count == 0) %>
-<% end %>

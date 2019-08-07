@@ -5,13 +5,10 @@
       <li><%= link_to "Home", "/", class: "nav-button" %></li>
       <li><%= link_to "Messages", "#", class: "nav-button" %></li>
       <li><img class="avatar" src="<%= current_user.gravatar_url %>"></li>
-      <li><%= link_to current_user.first_name, user_path(current_user.id), class: "nav-button" %>
-      </li>
+      <li><%= link_to current_user.first_name, user_path(current_user.id), class: "nav-button" %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-button" %></li>
     <% else %>
-      <li>
-        <%= link_to "Login", new_user_session_path, class: "nav-button" %>
-      </li>
+      <li><%= link_to "Login", new_user_session_path, class: "nav-button" %></li>
     <% end %>
   </ul>
 </div>

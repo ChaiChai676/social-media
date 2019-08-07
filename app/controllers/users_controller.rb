@@ -6,10 +6,6 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def destroy_user_session
-    redirect_to new_user_session_path
-  end
-
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
