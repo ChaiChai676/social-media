@@ -1,6 +1,6 @@
 development:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDIS_URL") { "redis://redistogo:16f4c4366422f33c6a99c1e836361186@porgy.redistogo.com:11506/" } %>
   channel_prefix: social-media_development
 
 test:
@@ -8,7 +8,7 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDIS_URL") { "redis://redistogo:16f4c4366422f33c6a99c1e836361186@porgy.redistogo.com:11506/" } %>
   channel_prefix: social-media_production
 
 # 6379/1
