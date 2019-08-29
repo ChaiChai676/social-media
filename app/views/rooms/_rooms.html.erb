@@ -2,7 +2,7 @@
   <nav class="nav flex-column">
     <% @rooms.each do |room| %>
       <% if user_signed_in? && room.user_ids.include?(current_user.id) %>
-        <%= link_to room.users.pluck(:first_name).join(" ").gsub(current_user.first_name, ""), room_path(room), class: 'nav-link room-nav-link' %>
+        <%= link_to room.users.pluck(:first_name, :surname).join(" ").gsub(/#{current_user.first_name}|#{current_user.surname}/, ""), room_path(room), class: 'nav-link room-nav-link' %>
       <% end %>
     <% end %>
   </nav>

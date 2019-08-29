@@ -24,7 +24,7 @@
     <div class="all-users">
       <h2>Profiles</h2>
       <% User.all.each do |user| %>
-        <%= link_to user.first_name, user_path(user.id), class: 'nav-link room-nav-link' %>
+        <%= link_to (user.first_name + " " + user.surname), user_path(user.id), class: 'nav-link room-nav-link' %>
       <% end %>
     </div>
   </div>
