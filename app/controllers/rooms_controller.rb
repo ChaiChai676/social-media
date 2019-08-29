@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(permitted_parameters)
     authorize @room
-    @room.users << User.find(current_user.id)
+    @room.users << current_user
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
       RoomMessage.create(user: current_user, room: @room, message: "", blank: true)
@@ -43,12 +43,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  protected
-
-  def load_entities
-    @rooms = Room.all
-    @room = Room.find(params[:id]) if params[:id]
-  end
+  private
 
   def permitted_parameters
     params.require(:room).permit(:name, :user_ids)

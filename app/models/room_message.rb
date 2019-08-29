@@ -1,4 +1,6 @@
 class RoomMessage < ApplicationRecord
+  validates :message, presence: true
+
   belongs_to :user
   belongs_to :room, inverse_of: :room_messages
 
