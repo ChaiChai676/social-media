@@ -68,8 +68,9 @@
               <div class="input-group mb-3">
 
               <div class="hidden">
-                <%= form.input :room_id, input_html: {value: @room.id}%>
-                <%= form.input :user_id, input_html: {value: current_user.id}%>
+                <%= form.input :room_id, input_html: {value: @room.id }%>
+                <%= form.input :user_id, input_html: {value: current_user.id }%>
+
               </div>
 
                 <%= form.input :message, as: :string,
