@@ -1,10 +1,20 @@
 class RoomMessage < ApplicationRecord
-  validates :message, :user, :room, presence: true
+  validates :message, presence: true, unless: -> { file.attached? }
+
+  validates_associated :user, :room
 
   belongs_to :user
   belongs_to :room, inverse_of: :room_messages
 
+  has_one_attached :file
+
+  after_update :as_json
+
   def as_json(options)
-    super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name)
+    if file.attached?
+      super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name, file_name: file.filename, file_url: file.metadata)
+    else
+      super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name)
+    end
   end
 end

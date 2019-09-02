@@ -17,6 +17,6 @@ class RoomMessagesController < ApplicationController
   end
 
   def room_message_params
-    params.require(:room_message).permit(:message, :user_id, :room_id)
+    params.require(:room_message).permit(:message, :user_id, :room_id, :file)
   end
 end
