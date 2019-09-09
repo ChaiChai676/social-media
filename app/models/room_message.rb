@@ -11,10 +11,10 @@ class RoomMessage < ApplicationRecord
   after_update :as_json
 
   def as_json(options)
-    if file.attached?
-      super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name, file_name: file.filename, file_url: file.metadata)
-    else
-      super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name)
-    end
+    # if file.attached?
+    #   super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name, file_name: file.filename, file_url: "youtube.com")
+    # else
+      super(options).merge(user_avatar_url: user.gravatar_url, user_first_name: user.first_name, file_url: "youtube.com")
+    # end
   end
 end
