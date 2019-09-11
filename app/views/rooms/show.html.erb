@@ -50,15 +50,13 @@
 
 
                             <p class="mb-1" data-role="message-text">
-                              <%= room_message.message + room_message.id.to_s %>
+                              <%= room_message.message %>
                             </p>
 
                             <% if room_message.file.attached? %>
 
                             <a href="localhost:3000<%=url_for(room_message.file)%>" class="link-to-file mb-1" data-role="file-name">
-                              <%= link_to room_message.file.filename, room_message.file %>
-                              <%= room_message.id %>
-                            </a>
+                              <%= link_to room_message.file.filename, room_message.file %></a>
 
                             <% end %>
 
