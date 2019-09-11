@@ -55,15 +55,9 @@
 
                             <% if room_message.file.attached? %>
 
-                            <p class="mb-1" data-role="file-name">
+                            <a href="localhost:3000<%=url_for(room_message.file)%>" class="link-to-file mb-1" data-role="file-name">
                               <%= link_to room_message.file.filename, room_message.file %>
                               <%= room_message.id %>
-
-                            </p>
-
-                            <a class="the-link" href="localhost:3000<%=url_for(room_message.file)%>" class="mb-1">
-                              file link
-                              <%=  %>
                             </a>
 
                             <% end %>
@@ -102,7 +96,6 @@
                   <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
                 </div>
               </div>
-
           <% end %>
         <%= link_to "Back to rooms", rooms_path %>
       </div>

@@ -3,8 +3,8 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-
   config.web_socket_server_url = "wss://chaichat.herokuapp.com/cable"
+  config.action_mailer.default_url_options = { :host => "chaichat.com" }
 
   config.action_cable.allowed_request_origins = ['https://chaichat.herokuapp.com', 'http://chaichat.herokuapp.com']
 
