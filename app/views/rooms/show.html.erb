@@ -47,9 +47,21 @@
                     </div>
                         <div class="col">
                           <div class="message-content">
+
+
                             <p class="mb-1" data-role="message-text">
-                              <%= room_message.message %>
+                              <%= room_message.message + room_message.id.to_s %>
                             </p>
+
+                            <% if room_message.file.attached? %>
+
+                            <a href="localhost:3000<%=url_for(room_message.file)%>" class="link-to-file mb-1" data-role="file-name">
+                              <%= link_to room_message.file.filename, room_message.file %>
+                              <%= room_message.id %>
+                            </a>
+
+                            <% end %>
+
                               <div class="text-right" data-role="message-date">
                                 <small>
                                   <%= room_message.created_at %>
@@ -73,17 +85,17 @@
 
               </div>
 
-                <%= form.input :message, as: :string,
-                                    wrapper: false,
-                                      label: false,
-                                 input_html: {
-                                      class: 'chat-input'
-                                    } %>
+                  <%= form.input :message, as: :string,
+                                      wrapper: false,
+                                        label: false,
+                                   input_html: {
+                                        class: 'chat-input'
+                                      } %>
+                  <%= form.file_field :file %>
                 <div class="input-group-append">
                   <%= form.submit "Send", class: 'btn btn-primary chat-input' %>
                 </div>
               </div>
-
           <% end %>
         <%= link_to "Back to rooms", rooms_path %>
       </div>

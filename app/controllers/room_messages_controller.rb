@@ -3,6 +3,9 @@ class RoomMessagesController < ApplicationController
 
   def create
     @room_message = RoomMessage.create(room_message_params)
+    if @room_message.file.attachment != nil
+      @room_message.file.attachment.blob.update(link: url_for(@room_message.file))
+    end
 
     authorize @room_message
     RoomChannel.broadcast_to @room, @room_message
@@ -17,6 +20,6 @@ class RoomMessagesController < ApplicationController
   end
 
   def room_message_params
-    params.require(:room_message).permit(:message, :user_id, :room_id)
+    params.require(:room_message).permit(:message, :user_id, :room_id, :file)
   end
 end

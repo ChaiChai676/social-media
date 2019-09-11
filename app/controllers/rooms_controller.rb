@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
     @room.users << current_user
     if @room.save
       flash[:success] = "Room #{@room.name} was created successfully"
-      RoomMessage.create(user: current_user, room: @room, message: "", blank: true)
+      # RoomMessage.create(user: current_user, room: @room, message: "test message", blank: true)
       redirect_to room_path(@room)
     else
       render :new
